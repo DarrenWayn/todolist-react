@@ -1,1 +1,1 @@
-# todolist-js
+# simple-reusable-sass

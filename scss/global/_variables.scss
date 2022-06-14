@@ -1,0 +1,57 @@
+// Theme colors
+$primary: #326dee !default;
+$secondary: #1ac888 !default;
+$error: #d32752 !default;
+$info: #f6c31c !default;
+
+// color palette
+$colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "error": $error,
+    "info": $info,
+    "blue": #1919e6,
+    "red": #e61919,
+    "yellow": #e6e619,
+    "green": #19e635,
+    "orange": #ffa600,
+    "purple": #9900ff,
+    "gray": #808080,
+    "black": black,
+    "white": white,
+);
+
+.test-btn {
+    background-color: map-get($colors, 'purple')
+}
+
+
+// Spacing
+$base-padding: 0.75rem !default;
+$base-margin: 0.75rem !default;
+
+// Borders
+$base-border-thickness: 1px !default;
+$base-border-radius: 20px !default;
+
+// Box Shadows 
+$base-box-shadow: 1px 3px 5px rgba(0,0,0,0.1) !default;
+
+// Font Sizes
+$base-font-size: 1rem !default;
+$font-size-sm: $base-font-size * 0.75 !default;
+$font-size-lg: $base-font-size * 1.5 !default;
+$font-size-xl: $base-font-size * 2 !default;
+$font-size-xxl: $base-font-size * 3 !default;
+
+// @debug map-get($colors, "purple");
+
+// // does colors have a secondary key? is it true?
+// @debug map-has-key($colors, 'secondary');
+// @debug map-has-key($colors, 'tertiary');
+
+// // remove value on the map
+// @debug map-remove($colors, 'primary');
+
+// // added new value to the map
+// @debug map-merge($colors, ('pink': pink));
