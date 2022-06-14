@@ -8,48 +8,50 @@
     <title>Learn Sass</title>
 </head>
 <body>
-    <!-- header -->
-    <header>
-        <h1>Todo List App Js</h1>
-        <form  id="now-task-form" action="">
-            <input
-                type="text"
-                id="new-task-input"
-                placeholder="Input task here"
-            >
-            <input 
-                type="submit"
-                id="new-task-submit"
-                value="Add task"
-            >
-        </form>
-    </header>
+    <div class="container">
+        <!-- header -->
+        <header>
+            <h1>Todo List App Js</h1>
+            <form  id="now-task-form" action="">
+                <input
+                    type="text"
+                    id="new-task-input"
+                    placeholder="Input task here"
+                >
+                <input 
+                    type="submit"
+                    id="new-task-submit"
+                    value="Add task"
+                >
+            </form>
+        </header>
 
-    <!-- main -->
-    <main>
-        <section class="task-list">
-            <h2>Task</h2>
+        <!-- main -->
+        <main>
+            <section class="task-list">
+                <h2>Tasks</h2>
 
-            <div id="tasks">
-                <div class="task">
-                    <div class="content">
-                        <input 
-                            type="text"
-                            class="text"
-                            value="My Task"
-                            readonly
-                        >
-                    </div>
-                    <div class="actions">
-                        <button class="edit">Edit</button>
-                        <button class="delete">Delete</button>
+                <div id="tasks">
+                    <div class="task">
+                        <div class="content">
+                            <input 
+                                type="text"
+                                class="text"
+                                value="My Task"
+                                readonly
+                            >
+                        </div>
+                        <div class="actions">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
+        </main>
+    </div>
 
     <!-- Javascript -->
-    <script src="main.js"></script>
+    <script async src="main.js" type="text/javascript" defer="defer"></script>
 </body>
 </html>

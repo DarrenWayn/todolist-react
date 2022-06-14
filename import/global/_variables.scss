@@ -1,28 +1,29 @@
 // Theme colors
-$primary: #326dee !default;
-$secondary: #1ac888 !default;
-$error: #d32752 !default;
-$info: #f6c31c !default;
+$dark: #374151 !default;
+$darker: #111829 !default;
+$darkest: #111 !default;
+$gray: #6B7280 !default;
+$light: #EEE !default;
+$pink: #EC4899 !default;
+$purple: #885CF6 !default;
 
 // color palette
 $colors: (
-    "primary": $primary,
-    "secondary": $secondary,
-    "error": $error,
-    "info": $info,
-    "blue": #1919e6,
-    "red": #e61919,
-    "yellow": #e6e619,
-    "green": #19e635,
-    "orange": #ffa600,
-    "purple": #9900ff,
-    "gray": #808080,
-    "black": black,
-    "white": white,
+    'dark' : $dark,
+    'darker' : $darker,
+    'darkest' : $darkest,
+    'light' : $light,
+    'pink' : $pink,
+    'purple' : $purple,
 );
 
-.test-btn {
-    background-color: map-get($colors, 'purple')
+$text-gradient-list: $pink, $purple;
+
+
+@mixin text-gradient($direction, $list) { 
+    background-image: -webkit-linear-gradient($direction, $text-gradient-list);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 

@@ -1,0 +1,43 @@
+header {
+    padding: $base-padding * 3 $base-padding * 1;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    h1 {
+        font-size: $font-size-xxl;
+        font-weight: 300;
+        color: $gray;
+        margin-bottom: 1rem;
+    }
+    #new-task-form {
+        display: flex;
+    }
+    #new-task-input {
+        flex:  1 1 0%;
+        background-color: $darker;
+        padding: 1rem;
+        border-radius: 1rem;
+        margin-right: 1rem;
+        min-width: 78%;
+        color: $light;
+        font-size: 2rem;
+        &::placeholder {
+            color: $gray;
+        }
+    }
+    #new-task-submit {
+        color: $pink;
+        font-size: $base-font-size * 2;
+        font-weight: 700;
+        @include text-gradient(right, $text-gradient-list);
+        cursor: pointer;  
+        transition:  0.4s;
+        
+        &:hover {
+            opacity: 0.8;
+        }
+        &:active {
+            opacity: 0.6;
+        }
+    }
+}
