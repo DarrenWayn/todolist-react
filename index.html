@@ -11,12 +11,15 @@
     <div class="container">
         <!-- header -->
         <header>
-            <h1>Todo List App Js</h1>
-            <form  id="now-task-form" action="">
+            <h1>Things to do</h1>
+            <form  id="new-task-form" action="">
                 <input
                     type="text"
                     id="new-task-input"
-                    placeholder="Input task here"
+                    placeholder="input task here"
+                    maxlength="30"
+                    autocomplete="off"
+                    required
                 >
                 <input 
                     type="submit"
