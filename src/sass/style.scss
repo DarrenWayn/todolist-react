@@ -1,0 +1,14 @@
+@import 'global/variables';
+@import 'global/base';
+@import 'global/breakpoints';
+@import 'global/grid';
+@import 'components/header';
+@import 'components/main';
+@import 'components/button';
+
+.container {
+    height: 100vh;
+    background-color: $darker;
+    padding: 2rem;
+}
+

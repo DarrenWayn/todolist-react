@@ -1,9 +1,8 @@
 import React from 'react'
-import '../css/index.css'
 
 const Header = () => {
   return (
-    <header>
+    <header className="col-12-xs col-5-sm col-3-xl">
         <h1>Things to do</h1>
         <form  id="new-task-form" action="">
             <input
