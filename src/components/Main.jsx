@@ -1,29 +1,38 @@
 import React from 'react'
 
-const Main = () => {
+const Main = ( { todos, editTodoHandler, removetodoHandler, doneTodoHandler } ) => {
   return (
-    <main>
-        <section class="task-list">
-            <h2>Tasks</h2>
-
-            <div id="tasks">
-                <div class="task">
-                    <div class="content">
-                        <input 
-                            type="text"
-                            class="text"
-                            value="My Task"
-                            readonly
-                        />
-                    </div>
-                    <div class="actions">
-                        <button class="edit">Edit</button>
-                        <button class="delete">Delete</button>
-                    </div>
+    <>
+        <main>
+            <section className="task-list">
+                <h2>Tasks</h2>
+                    <div id="tasks">
+                    {todos.map((todo) => {
+                        <div className="task" key={todo.id}>
+                            <div className="content">
+                                <input 
+                                    type="text"
+                                    className="text"
+                                    value={todo}
+                                    readonly
+                                />
+                            </div>
+                            <div className="actions">
+                                <input 
+                                    type='checkbox'
+                                    check={todo.done}
+                                    onChange={doneTodoHandler.bind(this, todo)}
+                                />
+                                {todo.activity} ({todo.done ? 'done' : 'not done'})
+                                <button className='edit' onClick={editTodoHandler.bind(this, todo)}>Edit</button>
+                                <button className='delete' onClick={removetodoHandler.bind(this, todo.id)} >Remove</button>
+                            </div>
+                        </div>
+                    })}
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
+        </main>
+    </>
   )
 }
 
