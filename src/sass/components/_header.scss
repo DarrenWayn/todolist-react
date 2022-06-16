@@ -13,31 +13,59 @@ header {
         display: flex;
     }
     #new-task-input {
-        flex:  1 1 0%;
+        flex:  1 1 1%;
         background-color: $darker;
+        align-items: center;
         padding: 1rem;
         border-radius: 1rem;
         margin-right: 1rem;
-        min-width: 78%;
         color: $light;
         font-size: 2rem;
+
         &::placeholder {
             color: $gray;
         }
-    }
-    #new-task-submit {
-        color: $pink;
-        font-size: $base-font-size * 2;
-        font-weight: 700;
-        @include text-gradient(right, $text-gradient-list);
-        cursor: pointer;  
-        transition:  0.4s;
-        
-        &:hover {
-            opacity: 0.8;
+
+        &:focus {
+            border: 1px solid white;
         }
-        &:active {
-            opacity: 0.6;
+    }
+    .actions {
+        display: flex;
+        align-items: center;
+
+        #new-task-submit {
+            color: $pink;
+            font-size: $base-font-size * 2;
+            font-weight: 700;
+            margin-right: 2.5rem;
+            @include text-gradient(right, $text-gradient-list);
+            cursor: pointer;  
+            transition:  0.4s;
+            
+            &:hover {
+                opacity: 0.8;
+            }
+            &:active {
+                opacity: 0.6;
+            }
+        }
+    
+        #fontAfter {
+            font-size: $base-font-size;
+            color: $pink;
+            font-weight: 700;
+            align-items: center;
+            @include text-gradient(right, $text-gradient-list);
+            cursor: pointer;  
+            transition:  0.4s;
+            
+            &:hover {
+                opacity: 0.8;
+            }
+            &:active {
+                opacity: 0.6;
+            }
         }
     }
 }
