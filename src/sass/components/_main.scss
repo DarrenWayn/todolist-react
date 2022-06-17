@@ -19,13 +19,9 @@ main {
         padding: $base-padding * 2;
         border-radius: $base-border-radius;
         margin-bottom: 1rem;
-
-        .text-focus-in {
-            -webkit-animation: text-focus-in 800ms ease-in 100ms both;
-            animation: text-focus-in 800ms ease-in 100ms both;
-        
-            @include task-keyframe
-        }
+        -webkit-animation: task 500ms ease-in 100ms both;
+        animation: task 500ms ease-in 100ms both;
+        @include task-keyframe;
 
         .content .text {
             color: $light;
@@ -70,6 +66,12 @@ main {
                 color: crimson;
                 padding: 0px 2rem;
                 font-size: $base-font-size * 1.2;
+
+                &:focus-within {
+                    -webkit-animation: text-blur-out 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+                    animation: text-blur-out 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+                    @include task-delete;
+                }
             }
 
     }

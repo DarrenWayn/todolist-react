@@ -9,15 +9,21 @@ const Header = ({ saveTodoHandler, activity, setActivity, edit, cancleTodoHandle
             onSubmit={saveTodoHandler}
             id="new-task-form"
           >
-            <input
-              id="new-task-input"
-              type='text'
-              placeholder="input task here ...."
-              value={activity}
-              onChange={(e) => {setActivity(e.target.value)}}
-              autocomplete="off"
-              required
-            />
+            <div className='input-group'>
+              <input
+                  id="new-task-input"
+                  type='text'
+                  value={activity}
+                  onChange={(e) => {setActivity(e.target.value)}}
+                  autocomplete="off"
+                  required=""
+                  required
+                  name="text"
+                  className='input'
+                />
+                <label class="task-label">{ edit.id ? 'Edit Here' : 'Input your task here'}</label>
+            </div>
+              
             <div className='actions'>
               <button 
                 id="new-task-submit" 
@@ -28,13 +34,13 @@ const Header = ({ saveTodoHandler, activity, setActivity, edit, cancleTodoHandle
                   id="fontCancel" 
                   onClick={cancleTodoHandler}
                 >
-                 Cancel
+                 CANCEL
                 </div>
               }
               </button>
               { 
                 edit.id ? 
-                <button type='submit' id='fontSave'>Save</button> : 
+                <button type='submit' id='fontSave'>SAVE</button> : 
                 <button type='submit' id='new-task-submit'>Submit</button>
               }
             </div>

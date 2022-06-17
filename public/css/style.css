@@ -78,34 +78,49 @@ header h1 {
   font-size: 3rem;
   font-weight: 300;
   color: #6B7280;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 header #new-task-form {
   display: flex;
 }
-header #new-task-input {
-  flex: 1 1 1%;
+header .input-group {
+  position: relative;
+  flex: 1 1 0%;
+  margin-right: 1rem;
+}
+header .input-group input {
   background-color: #111829;
   align-items: center;
   padding: 1rem;
   border-radius: 1rem;
-  color: #EEE;
-  font-size: 1.5rem;
+  width: 100%;
+  transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-header #new-task-input::placeholder {
+header .input-group .task-label {
+  position: absolute;
+  left: 15px;
   color: #6B7280;
+  font-size: 1.5rem;
+  pointer-events: none;
+  transform: translateY(1rem);
+  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-header #new-task-input:focus {
-  border: 1px solid white;
+header .input-group #new-task-input:focus, header .input-group input:valid {
+  outline: none;
+  border: 1.5px solid #EEE;
+  font-size: 1.5rem;
+  color: #EEE;
 }
-@media (min-width: 480px) {
-  header #new-task-input {
-    flex: 1 1 0%;
-  }
+header .input-group #new-task-input:focus ~ label, header .input-group input:valid ~ label {
+  transform: translateY(-50%) scale(0.8);
+  background-color: #111829;
+  padding: 0.2em;
+  font-size: 1.5em;
+  color: #EEE;
 }
 header .actions {
   display: flex;
-  margin-right: 2rem;
+  margin-right: 1rem;
 }
 header .actions #new-task-submit {
   color: #EC4899;
@@ -125,7 +140,7 @@ header .actions #new-task-submit:active {
   opacity: 0.6;
 }
 header .actions #fontCancel {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #EC4899;
   font-weight: 700;
   align-items: center;
@@ -142,7 +157,7 @@ header .actions #fontCancel:active {
   opacity: 0.6;
 }
 header .actions #fontSave {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #EC4899;
   font-weight: 700;
   align-items: center;
@@ -178,12 +193,10 @@ main #tasks .task {
   padding: 1.5rem;
   border-radius: 2rem;
   margin-bottom: 1rem;
+  -webkit-animation: task 500ms ease-in 100ms both;
+  animation: task 500ms ease-in 100ms both;
 }
-main #tasks .task .text-focus-in {
-  -webkit-animation: text-focus-in 800ms ease-in 100ms both;
-  animation: text-focus-in 800ms ease-in 100ms both;
-}
-@-webkit-keyframes text-focus-in {
+@-webkit-keyframes task {
   0% {
     -webkit-filter: blur(12px);
     filter: blur(12px);
@@ -195,7 +208,7 @@ main #tasks .task .text-focus-in {
     opacity: 1;
   }
 }
-@keyframes text-focus-in {
+@keyframes task {
   0% {
     -webkit-filter: blur(12px);
     filter: blur(12px);
@@ -245,6 +258,30 @@ main #tasks .task .delete {
   color: crimson;
   padding: 0px 2rem;
   font-size: 1.2rem;
+}
+main #tasks .task .delete:focus-within {
+  -webkit-animation: text-blur-out 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: text-blur-out 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+@-webkit-keyframes text-blur-out {
+  0% {
+    -webkit-filter: blur(0.01);
+    filter: blur(0.01);
+  }
+  100% {
+    -webkit-filter: blur(12px) opacity(0%);
+    filter: blur(12px) opacity(0%);
+  }
+}
+@keyframes text-blur-out {
+  0% {
+    -webkit-filter: blur(0.01);
+    filter: blur(0.01);
+  }
+  100% {
+    -webkit-filter: blur(12px) opacity(0%);
+    filter: blur(12px) opacity(0%);
+  }
 }
 
 input, button {

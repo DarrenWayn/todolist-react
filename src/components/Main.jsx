@@ -5,8 +5,8 @@ const Main = ( { todos, editTodoHandler, removetodoHandler } ) => {
         <>
             <main>
                 <section className="task-list">
-                    <h2>{ todos.length > 0 ? 'Task' : `Let's add Task!` }</h2>
-                    <div id="tasks" className='text-focus-in'>
+                    <h2 style={{color:'crimson', fontStyle:'italic'}}>{ todos.length > 0 ? 'Task' : `Let's add Task!` }</h2>
+                    <div id="tasks">
                         {todos.map((todo) => {
                             return (
                                 <div className="task" key={todo.id}>
