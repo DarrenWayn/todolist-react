@@ -1,35 +1,3 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  font-family: "Fira Sans", sans-serif;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background-color: #111829;
-  color: white;
-}
-
-a {
-  text-decoration: none;
-}
-
-ul {
-  padding: 0;
-  list-style: none;
-}
-
-hr {
-  border: 0;
-  border-top: 1px dotted #efefef;
-}
-
-img {
-  max-width: 100%;
-}
-
 @media (min-width: 0) {
   .responsive-test {
     color: red;
@@ -61,6 +29,45 @@ img {
   }
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Fira Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+hr {
+  border: 0;
+  border-top: 1px dotted #efefef;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 400vh;
+  background-color: #111829;
+  color: white;
+  padding: 10px;
+  width: clamp(28rem, 100%, 90rem);
+}
+@media (min-width: 1600px) {
+  .container {
+    width: clamp(28rem, 100%, 360rem);
+  }
+}
+
 header {
   padding: 2.25rem 0.75rem;
   max-width: 800px;
@@ -82,9 +89,8 @@ header #new-task-input {
   align-items: center;
   padding: 1rem;
   border-radius: 1rem;
-  margin-right: 1rem;
   color: #EEE;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 header #new-task-input::placeholder {
   color: #6B7280;
@@ -92,15 +98,20 @@ header #new-task-input::placeholder {
 header #new-task-input:focus {
   border: 1px solid white;
 }
+@media (min-width: 480px) {
+  header #new-task-input {
+    flex: 1 1 0%;
+  }
+}
 header .actions {
   display: flex;
-  align-items: center;
+  margin-right: 2rem;
 }
 header .actions #new-task-submit {
   color: #EC4899;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin-right: 2.5rem;
+  margin-right: 0.3rem;
   background-image: -webkit-linear-gradient(right, #EC4899, #885CF6);
   -webkit-background-clip: text;
   color: transparent;
@@ -113,8 +124,8 @@ header .actions #new-task-submit:hover {
 header .actions #new-task-submit:active {
   opacity: 0.6;
 }
-header .actions #fontAfter {
-  font-size: 1rem;
+header .actions #fontCancel {
+  font-size: 1.3rem;
   color: #EC4899;
   font-weight: 700;
   align-items: center;
@@ -124,10 +135,26 @@ header .actions #fontAfter {
   cursor: pointer;
   transition: 0.4s;
 }
-header .actions #fontAfter:hover {
+header .actions #fontCancel:hover {
   opacity: 0.8;
 }
-header .actions #fontAfter:active {
+header .actions #fontCancel:active {
+  opacity: 0.6;
+}
+header .actions #fontSave {
+  font-size: 1.3rem;
+  color: #EC4899;
+  font-weight: 700;
+  align-items: center;
+  margin: 1rem 1.5rem;
+  color: crimson;
+  cursor: pointer;
+  transition: 0.4s;
+}
+header .actions #fontSave:hover {
+  opacity: 0.8;
+}
+header .actions #fontSave:active {
   opacity: 0.6;
 }
 
@@ -151,6 +178,34 @@ main #tasks .task {
   padding: 1.5rem;
   border-radius: 2rem;
   margin-bottom: 1rem;
+}
+main #tasks .task .text-focus-in {
+  -webkit-animation: text-focus-in 800ms ease-in 100ms both;
+  animation: text-focus-in 800ms ease-in 100ms both;
+}
+@-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
 }
 main #tasks .task .content .text {
   color: #EEE;

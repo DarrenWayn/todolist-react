@@ -5,13 +5,6 @@
     font-family: 'Fira Sans', sans-serif;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: $darker;
-    color: white;
-}
 
 a {
     text-decoration: none;
@@ -29,4 +22,18 @@ hr {
 
 img {
     max-width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 400vh;
+    background-color: $darker;
+    color: white;
+    padding: 10px;
+    width: clamp(28rem, 100%, 90rem);
+
+    @include xxl {
+        width: clamp(28rem, 100%, 360rem);
+    }
 }

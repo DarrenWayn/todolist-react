@@ -23,19 +23,19 @@ const Header = ({ saveTodoHandler, activity, setActivity, edit, cancleTodoHandle
                 id="new-task-submit" 
                 type='submit'
               >
-              {edit.id && 
-                <button 
-                  id="new-task-submit" 
+              { edit.id && 
+                <div 
+                  id="fontCancel" 
                   onClick={cancleTodoHandler}
                 >
-                  <div id='fontAfter'>Cancel</div>
-                </button>
+                 Cancel
+                </div>
               }
               </button>
               { 
                 edit.id ? 
-                <div id='fontAfter'>Save Changes</div> : 
-                <button id='new-task-submit'>Add</button>
+                <button type='submit' id='fontSave'>Save</button> : 
+                <button type='submit' id='new-task-submit'>Submit</button>
               }
             </div>
           </form>

@@ -66,21 +66,6 @@ const App = () => {
       setActivity('') 
   }
 
-  const doneTodoHandler = (todo) => {
-      const updatedTodo = {
-          ...todo,
-          done: todo.done ? false : true
-      }
-
-      const editTodoIndex  = todos.findIndex((currentTodo) => {
-          return currentTodo.id = todo.id
-      })
-
-      const updatedTodos = [...todos]
-      updatedTodos[editTodoIndex] = updatedTodo
-      setTodos(updatedTodos)
-  }
-
   return (
     <div className='container'>
       <Header
@@ -93,7 +78,6 @@ const App = () => {
       <Main
         todos={todos}
         editTodoHandler={editTodoHandler}
-        doneTodoHandler={doneTodoHandler}
         removetodoHandler={removetodoHandler}
       />
     </div>

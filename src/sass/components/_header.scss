@@ -18,9 +18,8 @@ header {
         align-items: center;
         padding: 1rem;
         border-radius: 1rem;
-        margin-right: 1rem;
         color: $light;
-        font-size: 2rem;
+        font-size: $clamp-font-sze;
 
         &::placeholder {
             color: $gray;
@@ -29,16 +28,37 @@ header {
         &:focus {
             border: 1px solid white;
         }
+
+        @include sm {
+            flex:  1 1 0%;
+        }
     }
     .actions {
         display: flex;
-        align-items: center;
+        margin-right: 2rem;
 
         #new-task-submit {
             color: $pink;
-            font-size: $base-font-size * 2;
+            font-size: $clamp-font-sze * 1;
             font-weight: 700;
-            margin-right: 2.5rem;
+            margin-right: 0.3rem;
+            @include text-gradient(right, $text-gradient-list);
+            cursor: pointer;  
+            transition:  0.4s;
+            
+            &:hover {
+                opacity: 0.8;
+            }
+            &:active {
+                opacity: 0.6;
+            }
+        }
+
+        #fontCancel {
+            font-size: $base-font-size * 1.3;
+            color: $pink;
+            font-weight: 700;
+            align-items: center;
             @include text-gradient(right, $text-gradient-list);
             cursor: pointer;  
             transition:  0.4s;
@@ -51,12 +71,13 @@ header {
             }
         }
     
-        #fontAfter {
-            font-size: $base-font-size;
+        #fontSave {
+            font-size: $base-font-size * 1.3;
             color: $pink;
             font-weight: 700;
             align-items: center;
-            @include text-gradient(right, $text-gradient-list);
+            margin: 1rem 1.5rem;
+            color: crimson;
             cursor: pointer;  
             transition:  0.4s;
             
