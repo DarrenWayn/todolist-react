@@ -100,6 +100,12 @@ header {
             @include text-gradient(right, $text-gradient-list);
             cursor: pointer;  
             transition:  0.4s;
+
+            @include xs {
+                margin: 0px;
+                font-size: 0.8rem;
+            }
+
             
             &:hover {
                 opacity: 0.8;
@@ -118,6 +124,12 @@ header {
             color: crimson;
             cursor: pointer;  
             transition:  0.4s;
+
+            @include xs {
+                margin: 0 .7rem;
+                font-size: 0.8rem;
+            }
+
             
             &:hover {
                 opacity: 0.8;

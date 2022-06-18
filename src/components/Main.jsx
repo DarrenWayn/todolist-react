@@ -14,7 +14,7 @@ const Main = ( { todos, editTodoHandler, removetodoHandler } ) => {
                                         <input 
                                             type="text"
                                             className="text"
-                                            value={todo.activity}
+                                            value={todo.activity.length > 23 ? `${todo.activity.substring(0, 23)}...` : todo.activity}
                                             readonly
                                         />
                                     </div>

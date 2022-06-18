@@ -2,6 +2,7 @@
   "name": "todolist-react",
   "version": "0.1.0",
   "private": true,
+  "author": "Darren Wayn",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -20,12 +21,17 @@
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "sass": "^1.52.3",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "@craco/craco": "5.2.4",
+    "fs": "0.0.1-security",
+    "glob-all": "3.1.0",
+    "path": "0.12.7",
+    "purgecss-webpack-plugin": "1.5.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject",
     "build:sass": "sass  --no-source-map src/sass:public/css",
     "copy:assets": "copyfiles -u 1 ./src/assets/**/* public",
@@ -38,9 +44,8 @@
     "serve": "browser-sync start --server public --files public",
     "starts": "npm-run-all copy --parallel watch serve",
     "builds": "npm-run-all copy:html build:*",
-    "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map",
-    "purgecss": "purgecss --css build/static/css/*.css --content build/index.html build/static/js/*.js --output build/static/css"
-  },
+    "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map"
+},
   "eslintConfig": {
     "extends": [
       "react-app",
