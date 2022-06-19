@@ -25,15 +25,21 @@ img {
 }
 
 .container {
+    // display: flex;
+    // flex-direction: column;
+    // min-height: 150vh;
+    // background-color: $darker;
+    // color: white;
+    // padding: 1rem;
+    // width: min(25rem, 100%, 40rem);
     display: flex;
     flex-direction: column;
+    flex-shrink: 1;
     min-height: 150vh;
     background-color: $darker;
     color: white;
-    padding: 10px;
-    width: clamp(23rem, 100%, 90rem);
 
-    @include xxl {
-        width: clamp(28rem, 100%, 360rem);
-    }
+    // @include xxl {
+    //     width: clamp(28rem, 100%, 360rem);
+    // }
 }

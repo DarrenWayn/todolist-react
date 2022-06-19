@@ -6,10 +6,25 @@ main {
     margin: 0 auto;
 
     h2 {
-        font-size: $base-font-size * 2;
         font-weight: 300;
         color: $gray;
         margin-bottom: 1rem;
+
+        @include xxs {
+            font-size: $font-size-lg;
+        }
+        @include xs {
+            font-size: $font-size-xl;
+        }
+        @include sm {
+            font-size: $font-size-xl;
+        }
+        @include md {
+            font-size: $font-size-xl;
+        }
+        @include xl {
+            font-size: $font-size-xl;
+        }
     }
 
     #tasks .task {
@@ -23,13 +38,36 @@ main {
         animation: task 500ms ease-in 100ms both;
         @include task-keyframe;
 
+        @include xxs {
+            padding: 0.5rem;
+        }
+        @include xs {
+            padding: 0.8rem;
+        }
+
         .content .text {
             color: $light;
-            font-size: $base-font-size * 1.1;
             width: 100%;
             display: block;
             transition: 0.4s;
+
+            @include xxs {
+                font-size: 0.5rem;
+            }
+            @include xs {
+                font-size: 0.8rem;
+            }
+            @include sm {
+                font-size: 1rem;
+            }
+            @include md {
+                font-size: 1.5rem;
+            }
         }
+
+            &:not(:-moz-read-only) {
+                color: $pink;
+            }
 
             &:not(:read-only) {
                 color: $pink;
@@ -58,21 +96,26 @@ main {
 
             .edit {
                 @include text-gradient(right, $text-gradient-list);
-                padding: 0px 2rem;
+                padding-right: 1.8rem;
                 font-size: $base-font-size * 1.2;
+                @include xxs {
+                    font-size: 0.6rem;
+                }
                 @include xs {
-                    padding: 0;
+                    padding-right: 2rem;
                     font-size: 0.9rem;
                 }
             }
 
             .delete {
                 color: crimson;
-                padding: 0px 2rem;
+                padding-right: 1.5rem;
                 font-size: $base-font-size * 1.2;
-
+                @include xxs {
+                    font-size: 0.6rem;
+                }
                 @include xs {
-                    padding: 0px 1;
+                    padding-right: 2rem;
                     font-size: 0.9rem;
                 }
 
