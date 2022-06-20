@@ -119,11 +119,11 @@ main {
                     font-size: 0.9rem;
                 }
 
-                // &:focus-within {
-                //     -webkit-animation: text-blur-out 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-                //     animation: text-blur-out 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-                //     @include task-delete;
-                // }
+                &:focus-within {
+                    -webkit-animation: text-blur-out 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+                    animation: text-blur-out 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+                    @include task-delete;
+                }
             }
 
     }
